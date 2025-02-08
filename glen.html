@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>basta</title>
+        <style>
+            * {
+                font-family: Arial;
+            }
+            body {
+                background-color: #FFB6C1;
+                
+            }
+            .container {
+                position: relative;
+                width: 100vw;
+                height: 90vh;
+            }
+            .hrtimg {
+                position: absolute;
+                width: 180px;
+                height: 180px;
+                z-index: 1;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .mdfimg {
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                z-index: 2;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .zoomhrt {
+                animation: zoomFullHrt ease-in-out 1.5s;
+                animation-fill-mode: forwards;
+            }
+            .zoommdf {
+                animation: zoomMdf ease-in-out 1.5s;
+                animation-fill-mode: forwards;
+            }
+            
+            @keyframes zoomFullHrt {
+                0% {
+                    width: 180px;
+                    height: 180px;
+                }
+                100% {
+                    width: 1200px;
+                    height: 1200px;
+                }
+            }
+            @keyframes zoomMdf {
+                0% {
+                    width: 0px;
+                    height: 0px;
+                }
+                100% {
+                    width: 550px;
+                    height: 550px;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="hrt" onclick="openLetter()">
+                <img class="hrtimg" id="hrtImg" src="hrt.png">
+                <img class="mdfimg" id="mdfImg" src="gl.png">
+            </div>
+        </div>
+    </body>
+    
+    <script>
+        function timer() {
+            
+        }
+        function openLetter() {
+            const hrtImage = document.getElementById("hrtImg");
+            const mdfImage = document.getElementById("mdfImg");
+            
+            hrtImage.classList.add("zoomhrt");
+            mdfImage.classList.add("zoommdf");
+            
+            
+            var sec = 2;
+            var zero = 0;
+            
+            var timer = setInterval(function() {
+                sec = sec - 1;
+                console.log(sec)
+                if (sec == zero) {
+                    clearTimeout(timer);
+                    window.location.href = "glen2.html";
+                }
+            }, 1000)
+        }
+    </script>
+</html>
