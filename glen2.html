@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <style>
+            * {
+                font-family: Arial;
+            }
+            body {
+                background-color: #FFB6C1;
+            }
+            .container {
+                position: relative;
+                width: 100vw;
+                height: 90vh;
+            }
+            h1 {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 100px;
+                color: white;
+            }
+            .fadein {
+                animation: fadeIn 0.5s;
+                animation-fill-mode: forwards;
+            }
+            }
+            .fadeout {
+                animation: fadeOut 0.5s;
+                animation-fill-mode: forwards;
+            }
+            .letter {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 90vw;
+                height: 0px;
+                /* CHANGE COLOR */
+                background-color: #E8D3BE;
+                border-radius: 5%;
+                box-shadow: 0px 10px 20px #444444;
+            }
+            .openan {
+                animation: openAn 1.5s;
+                animation-fill-mode: forwards;
+            }
+            .paraGraph {
+                opacity: 0%;
+                margin: 5%;
+                font-size: 38px;
+            }
+            h4 {
+                color: #080708;
+            }
+            .hrtimg {
+                position: absolute;
+                width: 90px;
+                height: 90px;
+                opacity: 0%;
+                top: 85%;
+                left: 95%;
+                transform: translate(-95%, -50%);
+            }
+
+            @keyframes fadeIn {
+                0% {
+                    opacity: 0%;
+                }
+                100% {
+                    opacity: 100%;
+                }
+            }
+            
+            @keyframes fadeOut {
+                0% {
+                    opacity: 100%;
+                }
+                100% {
+                    opacity: 0%;
+                }
+            }
+            @keyframes openAn {
+                0% {
+                    height: 0px;
+                }
+                100% {
+                    height: 62vh;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="fadeOut">JOKE LANG</h1>
+            <div class="letter" id="ltr">
+                <!-- CHANGE LETTER -->
+                <h4 class="paraGraph" id="paragrph">Happy first monthsary, baby!  It's already been a month since I can officially call you mine. Hehehe, thank you for giving me the right to call you that. Pwede na mag-selos, KEME. I still can't believe that you're my girlfriend. Shet, parang kailan lang, super nahihiya ako sa'yo, pero ngayon, walang hiya na HAHAHAHA. Pero kidding aside, I'm very grateful to have you, my super pretty baby, na minsan nonchalant pero nahihiya lang, and to call you mine. I'm very thankful that I'm part of the ones you love and value (pag hindi, iiyak ako). Thank you for always understanding me kasi taena, ang OA ko. Thank you for always reassuring me kasi super OA ko mag-overthink minsan, pero don't get me wrong, it's not that I don't trust you; I'm just scared na may umagaw (barilin ko pag may nag-try) hehehe. Thank you for being with me, baby. I'm very grateful that I have you, someone I can fully trust and my kakampi. Kahit minsan we have misunderstandings, but it's just normal. Sana hindi ka mapagod na ayusin lahat kasama ako. I don't know what life will throw at us, but I know we'll get through every single one of it no MATTER WHAT. This is just the first of many monthsaries, and it will lead to our anniversary until we get married IKAKASAL TAYO, NEY. But again, happy monthsary, baby. There's no enough word to express how lucky I am to call you MY GIRLFRIEND. Hehehe, I LOVE YOU SO MUCH, BABY!<br><br>PS: sorry hindi ko naibigay hard copy kanina hahahaha<br>-BF MO NA OA (Angelo)<br><br>02/08/24</h4>
+            </div>
+            <img class="hrtimg" id="hrtImg" src="hrt.png">
+        </div>
+    </body>
+    <script>
+        const hOne = document.getElementById("fadeOut")
+        const lettr = document.getElementById("ltr")
+        const prgh = document.getElementById("paragrph")
+        const hrtImage = document.getElementById("hrtImg");
+        
+        var sec = 1;
+        var zero = 0;
+        var neSec = -1;
+        
+        var timer = setInterval(function() {
+            sec = sec - 1;
+            if (sec == zero) {
+                hOne.classList.add("fadeout")
+                lettr.classList.add("openan")
+            }
+            if (sec == neSec) {
+                prgh.classList.add("fadein")
+                hrtImage.classList.add("fadein")
+            }
+        }, 1000)
+    </script>
+</html>
